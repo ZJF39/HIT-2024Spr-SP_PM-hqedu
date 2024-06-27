@@ -3,10 +3,12 @@ spring:
   name: haoqiedu
 spring.datasource:
   driver-class-name: com.mysql.cj.jdbc.Driver
-  url: jdbc:mysql://localhost:3306/haoqiedu #如不按提供的sql建表语句创建，请更改为要使用的库
+  url: jdbc:mysql://localhost:3306/haoqiedu
   username: root
-  password: #填入本地数据库密码
+  password: oku200309
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
+
+  mapper-locations=classpath: com\hqoqi\hqedu\mapper\StuMapper.xml

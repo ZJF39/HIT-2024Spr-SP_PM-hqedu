@@ -40,17 +40,17 @@ public class StuController {
     }
 
     /**
-     * 按照id删除学员信息
+     * 按照id批量删除学员信息
      */
-    @DeleteMapping("/delete/{id}")
-    public Result DeleteStuById(@PathVariable Integer id){
-        log.info("删除学员id为:{}",id);
-        stuService.deletebyid(id);
+    @DeleteMapping("/delete/{ids}")
+    public Result DeleteStuById(@PathVariable List<Integer> ids){
+        log.info("删除学员id为:{}",ids);
+        stuService.deletebyid(ids);
         return Result.success();
     }
 
     /**
-     * 新增学员信息（注册）
+     * 根据所给字段动态新增学员信息（注册）
      */
     @PostMapping("/add")
     public Result InsertStu(@RequestBody Stu stu){
@@ -59,6 +59,9 @@ public class StuController {
         return Result.success();
     }
 
+    /**
+     * 根据所传内容动态修改学员信息
+     */
     @PutMapping("/update")
     public Result UpdateStu(@RequestBody Stu stu){
         log.info("更新学员id为:{}",stu.getId());
@@ -66,10 +69,16 @@ public class StuController {
         return Result.success();
     }
 
+    /**
+     * 根据所传内容按条件查询学员信息并分页展示
+     */
     @GetMapping("/showpages")
-    public Result page(@RequestParam (defaultValue = "1") Integer page,
-                       @RequestParam (defaultValue = "10") Integer pageSize){
-        PageBean pageBean = stuService.page(page,pageSize);
+    public Result page(@RequestParam(defaultValue = "1") Integer page,
+                       @RequestParam(defaultValue = "10") Integer pageSize,
+                       String name){
+
+        log.info("分页查询学员信息:{},{},{}",page,pageSize,name);
+        PageBean pageBean = stuService.page(page,pageSize,name);
         return Result.success(pageBean);
     }
 }

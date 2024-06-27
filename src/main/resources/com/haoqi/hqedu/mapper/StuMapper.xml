@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haoqi.hqedu.mapper.StuMapper">
+    <insert id="add">
+        insert into tb_stu
+            <!--prefix 补充前字符 suffix 补充后字符 suffixoverrides 删除多余的指定字符-->
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            username,
+            password,
+            name,
+            <if test="telNum!=null">
+                tel_num
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            #{username},
+            #{password},
+            #{name},
+            <if test="telNum!=null">
+                #{telNum}
+            </if>
+        </trim>
+    </insert>
+
+    <delete id="deletebyid">
+        delete from tb_stu
+        where id in
+        <!--集合 元素 分隔符 左拼接 右拼接-->
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+
+    <!--查询全部-->
+    <select id="list" resultType="com.haoqi.hqedu.pojo.Stu">
+        select *
+        from tb_stu
+    </select>
+
+    <!--按照姓名模糊搜索 分页查询 -->
+    <select id="page" resultType="com.haoqi.hqedu.pojo.Stu">
+        select *
+        from tb_stu
+        <where>
+            <if test="name != null">
+                name like concat('%',
+                #{name},
+                '%'
+                )
+            </if>
+        </where>
+    </select>
+
+    <!--根据输入内容动态修改学生信息-->
+    <update id="update">
+        update tb_stu
+        <set>
+            <if test="username != null and username !=''">
+                username =
+                #{username},
+            </if>
+
+            <if test="password != null and password !=''">
+                password =
+                #{password},
+            </if>
+
+            <if test="name != null and name !=''">
+                name =
+                #{name},
+            </if>
+
+            <if test="telNum != null">
+                tel_num =
+                #{telNum}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>

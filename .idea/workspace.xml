@@ -21,9 +21,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2iOyU3oZUeyHB9XN5lP6hKqb0jS" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -44,6 +44,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "Errors",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -52,6 +53,12 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Code\Java\SPPM\hqedu\src\main\resources\com\haoqi\hqedu\mapper" />
+      <recent name="C:\Code\Java\SPPM\hqedu\src\main\resources\static" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="HqeduApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="hqedu" />
@@ -76,7 +83,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1719375932728</updated>
-      <workItem from="1719375933747" duration="17352000" />
+      <workItem from="1719375933747" duration="22102000" />
+      <workItem from="1719470108231" duration="51000" />
+      <workItem from="1719470178968" duration="8360000" />
     </task>
     <servers />
   </component>

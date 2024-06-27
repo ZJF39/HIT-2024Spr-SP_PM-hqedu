@@ -1,5 +1,7 @@
 package com.haoqi.hqedu.service.impl;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.haoqi.hqedu.mapper.StuMapper;
 import com.haoqi.hqedu.pojo.PageBean;
 import com.haoqi.hqedu.pojo.Stu;
@@ -21,8 +23,8 @@ public class StuServiceimpl implements StuService {
     }
 
     @Override
-    public void deletebyid(Integer id) {
-        stuMapper.deletebyid(id);
+    public void deletebyid(List<Integer> ids) {
+        stuMapper.deletebyid(ids);
     }
 
     @Override
@@ -40,12 +42,24 @@ public class StuServiceimpl implements StuService {
         stuMapper.update(stu);
     }
 
-    @Override
+    /*@Override
     public PageBean page(Integer page, Integer pageSize) {
         Integer count = stuMapper.count();
         Integer start = (page - 1) * pageSize;
         List<Stu> stuList = stuMapper.page(start, pageSize);
         PageBean pageBean = new PageBean(count, stuList);
+        return pageBean;
+    }*/
+
+    @Override
+    public PageBean page(Integer page, Integer pageSize, String name) {
+        //1.设置分页参数
+        PageHelper.startPage(page,pageSize);
+        //2.查询
+        List<Stu> stuList = stuMapper.page(name);
+        Page<Stu> P = (Page<Stu>) stuList;
+        //3.封装
+        PageBean pageBean = new PageBean(P.getTotal(), P.getResult());
         return pageBean;
     }
 }

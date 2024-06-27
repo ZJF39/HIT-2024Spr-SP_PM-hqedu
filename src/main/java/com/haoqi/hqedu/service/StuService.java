@@ -8,7 +8,7 @@ import java.util.List;
 public interface StuService {
     List<Stu> list();
 
-    void deletebyid(Integer id);
+    void deletebyid(List<Integer> ids);
 
     void add(Stu stu);
 
@@ -16,5 +16,5 @@ public interface StuService {
 
     void update(Stu stu);
 
-    PageBean page(Integer page, Integer pageSize);
+    PageBean page(Integer page, Integer pageSize,String name);
 }
