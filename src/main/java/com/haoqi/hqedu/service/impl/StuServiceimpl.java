@@ -7,6 +7,7 @@ import com.haoqi.hqedu.pojo.PageBean;
 import com.haoqi.hqedu.pojo.Stu;
 import com.haoqi.hqedu.service.StuService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -54,7 +55,7 @@ public class StuServiceimpl implements StuService {
     @Override
     public PageBean page(Integer page, Integer pageSize, String name) {
         //1.设置分页参数
-        PageHelper.startPage(page,pageSize);
+        PageHelper.startPage(page, pageSize);
         //2.查询
         List<Stu> stuList = stuMapper.page(name);
         Page<Stu> P = (Page<Stu>) stuList;

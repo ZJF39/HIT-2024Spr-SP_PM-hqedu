@@ -1,6 +1,5 @@
 package com.haoqi.hqedu.mapper;
 
-import com.github.pagehelper.ISelect;
 import com.haoqi.hqedu.pojo.Stu;
 import org.apache.ibatis.annotations.*;
 

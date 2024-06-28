@@ -1,5 +1,6 @@
 package com.haoqi.hqedu.pojo;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,10 +8,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Stu {
+public class Teacher {
     private Integer id;
-    private String username;
-    private String password;
     private String name;
-    private String telNum;
+    private Integer salary;
+    private Integer age;
+    private Integer sex;
 }

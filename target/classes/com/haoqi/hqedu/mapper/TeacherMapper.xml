@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haoqi.hqedu.mapper.TeacherMapper">
+    <insert id="add">
+        INSERT
+        into tb_teacher
+            <trim prefix="(" suffix=")" suffixOverrides=",">
+                name,
+                salary,
+                age,
+                <if test="sex!=null">
+                    sex
+                </if>
+            </trim>
+        VALUES
+            <trim prefix="(" suffix=")" suffixOverrides=",">
+                #{name},
+                #{salary},
+                #{age},
+                <if test="sex!=null">
+                    #{sex}
+                </if>
+            </trim>
+    </insert>
+    <update id="update">
+        update tb_teacher
+        <set>
+            <if test="name!=null">
+                name = #{name},
+            </if>
+            <if test="salary!=null">
+                salary = #{salary},
+            </if>
+            <if test="age!=null">
+                age = #{age},
+            </if>
+            <if test="sex!=null">
+                sex = #{sex}
+            </if>
+        </set>
+        where id = #{id};
+    </update>
+    <delete id="delete">
+        delete from tb_teacher
+               where id in
+               <foreach collection="ids" item="id" open="(" close=")" separator=",">
+                   #{id}
+               </foreach>
+    </delete>
+
+    <select id="show" resultType="com.haoqi.hqedu.pojo.Teacher">
+        select *
+        from tb_teacher
+        <where>
+            <if test="name != null">
+                name like concat('%',#{name},'%')
+            </if>
+        </where>
+    </select>
+</mapper>
