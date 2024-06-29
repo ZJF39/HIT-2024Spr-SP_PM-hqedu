@@ -1025,7 +1025,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="298" parent="1" name="haoqiedu">
-      <LastIntrospectionLocalTimestamp>2024-06-28.10:53:58</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-06-29.07:47:05</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="299" parent="1" name="mysql.infoschema">
@@ -1073,6 +1073,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
     <column id="308" parent="303" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <Comment>企业id</Comment>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>

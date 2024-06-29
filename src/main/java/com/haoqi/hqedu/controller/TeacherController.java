@@ -24,10 +24,10 @@ public class TeacherController {
      */
     @GetMapping("/show")
     public Result ShowTea(@RequestParam(defaultValue = "1") Integer page,
-                                 @RequestParam(defaultValue = "10") Integer pageSize,
-                                 String name){
-        log.info("分页展示教师信息:{}{}{}",page,pageSize,name);
-        PageBean pageBean = teacherService.show(page,pageSize,name);
+                          @RequestParam(defaultValue = "10") Integer pageSize,
+                          String name) {
+        log.info("分页展示教师信息:{}{}{}", page, pageSize, name);
+        PageBean pageBean = teacherService.show(page, pageSize, name);
         return Result.success(pageBean);
     }
 
@@ -35,7 +35,7 @@ public class TeacherController {
      * 根据所给字段动态新增讲师信息
      */
     @PostMapping("/add")
-    public Result InsertTea(@RequestBody Teacher teacher){
+    public Result InsertTea(@RequestBody Teacher teacher) {
         teacherService.add(teacher);
         return Result.success();
     }
@@ -44,14 +44,14 @@ public class TeacherController {
      * 按照id批量删除讲师信息
      */
     @DeleteMapping("/delete/{ids}")
-    public Result DeleteTeaById(@PathVariable List<Integer> ids){
-        log.info("删除老师id为:{}",ids);
+    public Result DeleteTeaById(@PathVariable List<Integer> ids) {
+        log.info("删除老师id为:{}", ids);
         teacherService.deletebyid(ids);
         return Result.success();
     }
 
     @PutMapping("/update")
-    public Result UpdateTea(@RequestBody Teacher teacher){
+    public Result UpdateTea(@RequestBody Teacher teacher) {
         teacherService.update(teacher);
         return Result.success();
     }

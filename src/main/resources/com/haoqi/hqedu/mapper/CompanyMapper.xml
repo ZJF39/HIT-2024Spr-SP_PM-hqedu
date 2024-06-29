@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haoqi.hqedu.mapper.CompanyMapper">
+
+    <insert id="insert">
+        insert into tb_company
+
+            <trim prefix="(" suffix=")" suffixOverrides=",">
+                    name,
+                <if test="flag!=null">
+                    flag
+                </if>
+            </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                #{name},
+            <if test="flag!=null">
+                #{flag}
+            </if>
+        </trim>
+    </insert>
+
+    <update id="update">
+        update tb_company
+        <set>
+            <if test="name!=null">
+                name = #{name},
+            </if>
+            <if test="flag!=null">
+                flag = #{flag}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="delete">
+        DELETE from tb_company
+        where id in
+            <foreach collection="ids" item="id" separator="," open="(" close=")">
+                #{id}
+            </foreach>
+    </delete>
+
+    <select id="show" resultType="com.haoqi.hqedu.pojo.Company">
+        select * from tb_company
+        <where>
+            <if test="name!=null">
+                name like concat ('%',#{name},'%')
+            </if>
+        </where>
+    </select>
+</mapper>
