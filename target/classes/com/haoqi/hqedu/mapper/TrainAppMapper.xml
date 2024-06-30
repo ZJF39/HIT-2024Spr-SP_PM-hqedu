@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haoqi.hqedu.mapper.TrainAppMapper">
+    <insert id="add">
+        INSERT INTO tb_trainapp
+            (name, company_id, start_date, end_date)
+        SELECT
+            #{trainappName} AS name, -- 这里填写实际的申请项目名
+            c.id AS company_id,
+            #{startDate} AS start_date, -- 这里填写实际的开始日期
+            #{endDate} AS end_date -- 这里填写实际的结束日期
+        FROM
+            tb_company c
+        WHERE
+            c.name = #{companyName} -- 这里填写实际的公司名称
+    </insert>
+    <delete id="delete">
+        delete from tb_trainapp
+            where id in
+                <foreach collection="ids" item="id" open="(" close=")" separator=",">
+                    #{id}
+                </foreach>
+    </delete>
+
+    <select id="show" resultType="com.haoqi.hqedu.pojo.TrainApp">
+        SELECT
+            t.id,
+            t.name AS trainapp_name,
+            c.name AS company_name,
+            t.start_date,
+            t.end_date
+        FROM
+            tb_trainapp t
+                JOIN
+            tb_company c ON t.company_id = c.id
+        <where>
+            <if test="name!=null">
+                t.name like concat('%',#{name},'%')
+            </if>
+        </where>
+    </select>
+</mapper>

@@ -82,3 +82,69 @@ CREATE TABLE `tb_company` (
   `flag` int NOT NULL DEFAULT '0' COMMENT '认证状态1-已认证0-未认证',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='企业信息管理'
+
+insert into tb_company(name, flag) values ('华为',0);
+insert into tb_company(name, flag) values ('中兴',0);
+insert into tb_company(name, flag) values ('电信',0);
+insert into tb_company(name, flag) values ('移动',0);
+insert into tb_company(name, flag) values ('联通',0);
+insert into tb_company(name, flag) values ('哈工大',0);
+insert into tb_company(name, flag) values ('百度',0);
+insert into tb_company(name, flag) values ('阿里',0);
+insert into tb_company(name, flag) values ('腾讯',0);
+insert into tb_company(name, flag) values ('美团',0);
+insert into tb_company(name, flag) values ('饿了么',0);
+insert into tb_company(name, flag) values ('网易',0);
+insert into tb_company(name, flag) values ('字节',0);
+
+
+
+CREATE TABLE `tb_trainapp` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT NULL COMMENT '申请项目名',
+  `company_id` int NOT NULL COMMENT '申请公司id',
+  `start_date` date NOT NULL COMMENT '开始日期',
+  `end_date` date NOT NULL COMMENT '结束日期',
+  PRIMARY KEY (`id`),
+  KEY `train_company_fk` (`company_id`),
+  CONSTRAINT `train_company_fk` FOREIGN KEY (`company_id`) REFERENCES `tb_company` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='培训申请表'
+
+INSERT INTO tb_trainapp(name, company_id, start_date, end_date)
+VALUES('培训项目1',1,'2024-01-01','2024-01-07');
+INSERT INTO tb_trainapp(name, company_id, start_date, end_date)
+VALUES('培训项目2',1,'2024-02-01','2024-02-14');
+INSERT INTO tb_trainapp(name, company_id, start_date, end_date)
+VALUES('培训项目3',2,'2024-05-11','2024-05-22');
+INSERT INTO tb_trainapp(name, company_id, start_date, end_date)
+VALUES('培训项目4',3,'2021-01-01','2021-01-02');
+INSERT INTO tb_trainapp(name, company_id, start_date, end_date)
+VALUES('培训项目5',5,'2021-01-01','2021-01-02');
+INSERT INTO tb_trainapp(name, company_id, start_date, end_date)
+VALUES('培训项目6',6,'2021-01-01','2021-01-02');
+INSERT INTO tb_trainapp(name, company_id, start_date, end_date)
+VALUES('培训项目7',7,'2021-01-01','2021-01-02');
+INSERT INTO tb_trainapp(name, company_id, start_date, end_date)
+VALUES('培训项目8',8,'2021-01-01','2021-01-02');
+INSERT INTO tb_trainapp(name, company_id, start_date, end_date)
+VALUES('培训项目9',9,'2021-01-01','2021-01-02');
+INSERT INTO tb_trainapp(name, company_id, start_date, end_date)
+VALUES('培训项目10',10,'2021-01-01','2021-01-02');
+INSERT INTO tb_trainapp(name, company_id, start_date, end_date)
+VALUES('培训项目13',13,'2021-01-01','2021-01-02');
+INSERT INTO tb_trainapp(name, company_id, start_date, end_date)
+VALUES('培训项目14',14,'2021-01-01','2021-01-02');
+INSERT INTO tb_trainapp(name, company_id, start_date, end_date)
+VALUES('培训项目15',15,'2021-01-01','2021-01-02');
+
+CREATE TABLE `tb_course` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(10) NOT NULL COMMENT '课程名称',
+  `teacher_id` int NOT NULL COMMENT '讲师id',
+  `start_date` date DEFAULT NULL,
+  `end_date` date DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `course_teacher___fk` (`teacher_id`),
+  CONSTRAINT `course_teacher___fk` FOREIGN KEY (`teacher_id`) REFERENCES `tb_teacher` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='课程表'
+

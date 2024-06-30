@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haoqi.hqedu.mapper.CourseMapper">
+    <insert id="add">
+        INSERT INTO tb_course
+            (name, teacher_id, start_date, end_date)
+        SELECT
+            #{courseName} AS name,
+            t.id AS teacher_id,
+            #{startDate} AS start_date,
+            #{endDate} AS end_date
+        FROM
+            tb_teacher t
+        WHERE
+            t.name = #{teacherName}
+    </insert>
+    <update id="update">
+        UPDATE tb_course
+        <set>
+            <if test="courseName != null">
+                name = #{courseName},
+            </if>
+            <if test="startDate != null">
+                start_date = #{startDate},
+            </if>
+            <if test="endDate != null">
+                end_date = #{endDate},
+            </if>
+            <if test="teacherName != null">
+                teacher_id = (SELECT id FROM tb_teacher WHERE name = #{teacherName}),
+            </if>
+        </set>
+        WHERE id = #{id};
+    </update>
+    <delete id="delete">
+        delete from tb_course
+        where id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="show" resultType="com.haoqi.hqedu.pojo.Course">
+        SELECT
+            c.id,
+            c.name AS courseName,
+            t.name AS teacherName,
+            c.start_date,
+            c.end_date
+        FROM
+            tb_course c join tb_teacher t on c.teacher_id = t.id
+        <where>
+            <if test="name!=null">
+                c.name like concat ('%',#{name},'%')
+            </if>
+        </where>
+
+    </select>
+</mapper>
