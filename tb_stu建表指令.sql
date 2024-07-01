@@ -148,3 +148,70 @@ CREATE TABLE `tb_course` (
   CONSTRAINT `course_teacher___fk` FOREIGN KEY (`teacher_id`) REFERENCES `tb_teacher` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='课程表'
 
+INSERT into tb_course(name, teacher_id, start_date, end_date)
+VALUES ('语文',1,'2024-01-01','2024-01-31');
+INSERT into tb_course(name, teacher_id, start_date, end_date)
+VALUES ('数学',2,'2024-01-01','2024-01-31');
+INSERT into tb_course(name, teacher_id, start_date, end_date)
+VALUES ('英语',3,'2024-01-01','2024-01-31');
+INSERT into tb_course(name, teacher_id, start_date, end_date)
+VALUES ('C++',4,'2024-01-01','2024-01-31');
+INSERT into tb_course(name, teacher_id, start_date, end_date)
+VALUES ('Python',5,'2024-01-01','2024-01-31');
+INSERT into tb_course(name, teacher_id, start_date, end_date)
+VALUES ('集合论与图论',6,'2024-01-01','2024-01-31');
+INSERT into tb_course(name, teacher_id, start_date, end_date)
+VALUES ('计算机组成原理',7,'2024-01-01','2024-01-31');
+INSERT into tb_course(name, teacher_id, start_date, end_date)
+VALUES ('软件构造',8,'2024-01-01','2024-01-31');
+INSERT into tb_course(name, teacher_id, start_date, end_date)
+VALUES ('形式语言',9,'2024-01-01','2024-01-31');
+INSERT into tb_course(name, teacher_id, start_date, end_date)
+VALUES ('自动机',10,'2024-01-01','2024-01-31');
+INSERT into tb_course(name, teacher_id, start_date, end_date)
+VALUES ('算法设计与分析',11,'2024-01-01','2024-01-31');
+INSERT into tb_course(name, teacher_id, start_date, end_date)
+VALUES ('NLP导论',11,'2024-01-01','2024-01-31');
+INSERT into tb_course(name, teacher_id, start_date, end_date)
+VALUES ('LLM导论',7,'2024-01-01','2024-01-31');
+INSERT into tb_course(name, teacher_id, start_date, end_date)
+VALUES ('数字电路',7,'2024-01-01','2024-01-31');
+
+
+CREATE TABLE `tb_stuapp` (
+  `id` int NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `stu_id` int NOT NULL COMMENT '学生id',
+  `course_id` int NOT NULL COMMENT '课程id',
+  PRIMARY KEY (`id`),
+  KEY `course_app___fk` (`course_id`),
+  KEY `stu_app___fk` (`stu_id`),
+  CONSTRAINT `course_app___fk` FOREIGN KEY (`course_id`) REFERENCES `tb_course` (`id`),
+  CONSTRAINT `stu_app___fk` FOREIGN KEY (`stu_id`) REFERENCES `tb_stu` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='学生报名表'
+
+INSERT INTO tb_stuapp(stu_id, course_id)
+VALUES (1,1);
+INSERT INTO tb_stuapp(stu_id, course_id)
+VALUES (1,2);
+INSERT INTO tb_stuapp(stu_id, course_id)
+VALUES (1,3);
+INSERT INTO tb_stuapp(stu_id, course_id)
+VALUES (2,4);
+INSERT INTO tb_stuapp(stu_id, course_id)
+VALUES (3,5);
+INSERT INTO tb_stuapp(stu_id, course_id)
+VALUES (4,6);
+INSERT INTO tb_stuapp(stu_id, course_id)
+VALUES (5,7);
+INSERT INTO tb_stuapp(stu_id, course_id)
+VALUES (6,8);
+INSERT INTO tb_stuapp(stu_id, course_id)
+VALUES (7,9);
+INSERT INTO tb_stuapp(stu_id, course_id)
+VALUES (8,10);
+INSERT INTO tb_stuapp(stu_id, course_id)
+VALUES (9,11);
+INSERT INTO tb_stuapp(stu_id, course_id)
+VALUES (10,12);
+INSERT INTO tb_stuapp(stu_id, course_id)
+VALUES (11,13);

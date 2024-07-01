@@ -32,6 +32,9 @@ public class CourseController {
         return Result.success(pageBean);
     }
 
+    /**
+     * 删除培训课程信息
+     */
 
     @DeleteMapping("/delete/{ids}")
     public Result DeleteCourse(@PathVariable List<Integer> ids){
@@ -48,6 +51,9 @@ public class CourseController {
         return Result.success();
     }
 
+    /**
+     * 修改培训课程信息
+     */
     @PutMapping("/update")
     public Result UpdateCourse(@RequestBody Course course) {
         courseService.update(course);

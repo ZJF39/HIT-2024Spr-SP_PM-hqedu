@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haoqi.hqedu.mapper.StuAppMapper">
+    <insert id="add">
+        INSERT INTO tb_stuapp(stu_id, course_id)
+        SELECT
+            stu.id AS stu_id,
+            course.id AS course_id
+        FROM
+            tb_stu stu,
+            tb_course course
+        WHERE
+            stu.name = #{stuName} AND
+            course.name = #{courseName}
+    </insert>
+    <update id="update">
+        UPDATE tb_stuapp
+        set
+                flag = '1'
+        WHERE id = #{id};
+    </update>
+
+    <delete id="delete">
+        delete from tb_stuapp
+            where id in
+                <foreach collection="ids" item="id" open="(" close=")" separator=",">
+                    #{id}
+                </foreach>
+    </delete>
+
+    <select id="show" resultType="com.haoqi.hqedu.pojo.StuApp">
+        SELECT
+            sa.id,
+            s.name AS stuName, -- 替换stu_id为stu_name
+            c.name AS courseName,-- 替换course_id为course_name
+            sa.flag
+        FROM
+            tb_stuapp sa
+                JOIN
+            tb_stu s ON sa.stu_id = s.id
+                JOIN
+            tb_course c ON sa.course_id = c.id
+        <where>
+            <if test="name!=null">
+                s.name like concat('%',#{name},'%')
+            </if>
+        </where>
+    </select>
+</mapper>
