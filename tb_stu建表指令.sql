@@ -215,3 +215,32 @@ INSERT INTO tb_stuapp(stu_id, course_id)
 VALUES (10,12);
 INSERT INTO tb_stuapp(stu_id, course_id)
 VALUES (11,13);
+
+
+
+CREATE TABLE `tb_evaluation` (
+  `id` int NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `stu_id` int NOT NULL COMMENT '学生id',
+  `course_id` int NOT NULL COMMENT '课程id',
+  `tea_id` int NOT NULL COMMENT '教师id',
+  `eva` varchar(1024) NOT NULL COMMENT '课程评价',
+  `rating` int NOT NULL COMMENT '评分(1-5)',
+  PRIMARY KEY (`id`),
+  KEY `eva_course___fk` (`course_id`),
+  KEY `eva_stu___fk` (`stu_id`),
+  CONSTRAINT `eva_course___fk` FOREIGN KEY (`course_id`) REFERENCES `tb_course` (`id`),
+  CONSTRAINT `eva_stu___fk` FOREIGN KEY (`stu_id`) REFERENCES `tb_stu` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='培训评价表'
+
+
+INSERT INTO tb_evaluation(stu_id, course_id, eva, rating) VALUES (1,1,'非常棒',5);
+INSERT INTO tb_evaluation(stu_id, course_id, eva, rating) VALUES (1,2,'这是一条评价，能输入很多内容，课程评价',5);
+INSERT INTO tb_evaluation(stu_id, course_id, eva, rating) VALUES (2,3,'非常棒',4);
+INSERT INTO tb_evaluation(stu_id, course_id, eva, rating) VALUES (3,3,'非常棒',3);
+INSERT INTO tb_evaluation(stu_id, course_id, eva, rating) VALUES (4,3,'非常棒',2);
+INSERT INTO tb_evaluation(stu_id, course_id, eva, rating) VALUES (5,4,'非常棒',1);
+INSERT INTO tb_evaluation(stu_id, course_id, eva, rating) VALUES (6,4,'非常棒',5);
+INSERT INTO tb_evaluation(stu_id, course_id, eva, rating) VALUES (7,5,'非常棒',5);
+INSERT INTO tb_evaluation(stu_id, course_id, eva, rating) VALUES (8,6,'非常棒',5);
+INSERT INTO tb_evaluation(stu_id, course_id, eva, rating) VALUES (9,7,'非常棒',5);
+INSERT INTO tb_evaluation(stu_id, course_id, eva, rating) VALUES (10,8,'非常棒',5);
