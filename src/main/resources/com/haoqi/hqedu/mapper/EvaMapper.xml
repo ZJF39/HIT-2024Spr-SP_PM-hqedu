@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haoqi.hqedu.mapper.EvaMapper">
+    <insert id="insert">
+        INSERT INTO tb_evaluation(stu_id, course_id, eva, rating)
+        SELECT
+            stu.id AS stu_id,
+            course.id AS course_id,
+            #{eva},
+            #{rating}
+        FROM
+            tb_stu stu,
+            tb_course course
+        WHERE
+            stu.name = #{stuName} AND
+            course.name = #{courseName}
+    </insert>
+    <delete id="delete">
+        delete from tb_evaluation
+            where id in
+                <foreach collection="ids" item="id" open="(" close=")" separator=",">
+                    #{id}
+                </foreach>
+    </delete>
+
+    <select id="show" resultType="com.haoqi.hqedu.pojo.Evaluation">
+        SELECT
+            e.id,
+            s.name AS stuName,
+            c.name AS courseName,
+            e.eva,
+            e.rating
+        FROM
+            tb_evaluation e
+                JOIN
+            tb_stu s ON e.stu_id = s.id
+                JOIN
+            tb_course c ON e.course_id = c.id
+        <where>
+            <if test="stuName!=null">
+                AND s.name like concat('%',#{stuName},'%')
+            </if>
+            <if test="courseName!=null">
+                AND c.name like concat('%',#{courseName},'%')
+            </if>
+        </where>
+    </select>
+</mapper>

@@ -244,3 +244,4 @@ INSERT INTO tb_evaluation(stu_id, course_id, eva, rating) VALUES (7,5,'非常棒
 INSERT INTO tb_evaluation(stu_id, course_id, eva, rating) VALUES (8,6,'非常棒',5);
 INSERT INTO tb_evaluation(stu_id, course_id, eva, rating) VALUES (9,7,'非常棒',5);
 INSERT INTO tb_evaluation(stu_id, course_id, eva, rating) VALUES (10,8,'非常棒',5);
+

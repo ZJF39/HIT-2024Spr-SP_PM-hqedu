@@ -1025,7 +1025,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="298" parent="1" name="haoqiedu">
-      <LastIntrospectionLocalTimestamp>2024-07-01.07:51:48</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-07-05.06:36:58</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="299" parent="1" name="mysql.infoschema">
@@ -1057,331 +1057,400 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="305" parent="298" name="tb_course_student_teacher">
+    <table id="305" parent="298" name="tb_course_student">
       <Comment>学员-课程-讲师表</Comment>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="306" parent="298" name="tb_stu">
+    <table id="306" parent="298" name="tb_evaluation">
+      <Comment>培训评价表</Comment>
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="307" parent="298" name="tb_stu">
       <Comment>学员管理表</Comment>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="307" parent="298" name="tb_stuapp">
+    <table id="308" parent="298" name="tb_stuapp">
       <Comment>学生报名表</Comment>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="308" parent="298" name="tb_teacher">
+    <table id="309" parent="298" name="tb_teacher">
       <Comment>讲师管理表</Comment>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="309" parent="298" name="tb_trainapp">
+    <table id="310" parent="298" name="tb_trainapp">
       <Comment>培训申请表</Comment>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="310" parent="303" name="id">
+    <column id="311" parent="303" name="id">
       <AutoIncrement>16</AutoIncrement>
       <Comment>企业id</Comment>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="311" parent="303" name="name">
+    <column id="312" parent="303" name="name">
       <Comment>企业名称</Comment>
       <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="312" parent="303" name="flag">
+    <column id="313" parent="303" name="flag">
       <Comment>认证状态1-已认证0-未认证</Comment>
       <DasType>int|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <index id="313" parent="303" name="PRIMARY">
+    <index id="314" parent="303" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="314" parent="303" name="PRIMARY">
+    <key id="315" parent="303" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="315" parent="304" name="id">
+    <column id="316" parent="304" name="id">
       <AutoIncrement>16</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="316" parent="304" name="name">
+    <column id="317" parent="304" name="name">
       <Comment>课程名称</Comment>
       <DasType>varchar(10)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="317" parent="304" name="teacher_id">
+    <column id="318" parent="304" name="teacher_id">
       <Comment>讲师id</Comment>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="318" parent="304" name="start_date">
+    <column id="319" parent="304" name="start_date">
       <DasType>date|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="319" parent="304" name="end_date">
+    <column id="320" parent="304" name="end_date">
       <DasType>date|0s</DasType>
       <Position>5</Position>
     </column>
-    <foreign-key id="320" parent="304" name="course_teacher___fk">
+    <foreign-key id="321" parent="304" name="course_teacher___fk">
       <ColNames>teacher_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>tb_teacher</RefTableName>
     </foreign-key>
-    <index id="321" parent="304" name="PRIMARY">
+    <index id="322" parent="304" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="322" parent="304" name="course_teacher___fk">
+    <index id="323" parent="304" name="course_teacher___fk">
       <ColNames>teacher_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="323" parent="304" name="PRIMARY">
+    <key id="324" parent="304" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="324" parent="305" name="id">
+    <column id="325" parent="305" name="id">
       <AutoIncrement>1</AutoIncrement>
       <Comment>主键id</Comment>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="325" parent="305" name="stu_id">
+    <column id="326" parent="305" name="stu_id">
       <Comment>学员id</Comment>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="326" parent="305" name="course_id">
+    <column id="327" parent="305" name="course_id">
       <Comment>课程id</Comment>
       <DasType>int|0s</DasType>
       <Position>3</Position>
     </column>
-    <foreign-key id="327" parent="305" name="student___fk">
+    <foreign-key id="328" parent="305" name="student___fk">
       <ColNames>stu_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>tb_stu</RefTableName>
     </foreign-key>
-    <index id="328" parent="305" name="PRIMARY">
+    <foreign-key id="329" parent="305" name="tb_course___fk">
+      <ColNames>course_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>tb_course</RefTableName>
+    </foreign-key>
+    <index id="330" parent="305" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="329" parent="305" name="student___fk">
+    <index id="331" parent="305" name="student___fk">
       <ColNames>stu_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="330" parent="305" name="course___fk">
+    <index id="332" parent="305" name="tb_course___fk">
       <ColNames>course_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="331" parent="305" name="PRIMARY">
+    <key id="333" parent="305" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="332" parent="306" name="id">
+    <column id="334" parent="306" name="id">
+      <AutoIncrement>13</AutoIncrement>
+      <Comment>主键id</Comment>
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="335" parent="306" name="stu_id">
+      <Comment>学生id</Comment>
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="336" parent="306" name="course_id">
+      <Comment>课程id</Comment>
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="337" parent="306" name="eva">
+      <Comment>课程评价</Comment>
+      <DasType>varchar(1024)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="338" parent="306" name="rating">
+      <Comment>评分(1-5)</Comment>
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="339" parent="306" name="eva_stu___fk">
+      <ColNames>stu_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>tb_stu</RefTableName>
+    </foreign-key>
+    <foreign-key id="340" parent="306" name="eva_course___fk">
+      <ColNames>course_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>tb_course</RefTableName>
+    </foreign-key>
+    <index id="341" parent="306" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="342" parent="306" name="eva_stu___fk">
+      <ColNames>stu_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="343" parent="306" name="eva_course___fk">
+      <ColNames>course_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="344" parent="306" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="345" parent="307" name="id">
       <AutoIncrement>16</AutoIncrement>
       <Comment>主键id</Comment>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="333" parent="306" name="username">
+    <column id="346" parent="307" name="username">
       <Comment>用户名</Comment>
       <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="334" parent="306" name="password">
+    <column id="347" parent="307" name="password">
       <Comment>密码</Comment>
       <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="335" parent="306" name="name">
+    <column id="348" parent="307" name="name">
       <Comment>学员姓名</Comment>
       <DasType>varchar(10)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="336" parent="306" name="tel_num">
+    <column id="349" parent="307" name="tel_num">
       <Comment>电话号码</Comment>
       <DasType>varchar(11)|0s</DasType>
       <Position>5</Position>
     </column>
-    <index id="337" parent="306" name="PRIMARY">
+    <index id="350" parent="307" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="338" parent="306" name="username">
+    <index id="351" parent="307" name="username">
       <ColNames>username</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="339" parent="306" name="PRIMARY">
+    <key id="352" parent="307" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="340" parent="306" name="username">
+    <key id="353" parent="307" name="username">
       <UnderlyingIndexName>username</UnderlyingIndexName>
     </key>
-    <column id="341" parent="307" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="354" parent="308" name="id">
+      <AutoIncrement>15</AutoIncrement>
       <Comment>主键id</Comment>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="342" parent="307" name="stu_id">
+    <column id="355" parent="308" name="stu_id">
       <Comment>学生id</Comment>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="343" parent="307" name="course_id">
+    <column id="356" parent="308" name="course_id">
       <Comment>课程id</Comment>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="344" parent="307" name="flag">
+    <column id="357" parent="308" name="flag">
       <Comment>申请通过标识1-通过0-已通过</Comment>
       <DasType>int|0s</DasType>
       <DefaultExpression>(_utf8mb4&apos;0&apos;)</DefaultExpression>
       <Position>4</Position>
     </column>
-    <foreign-key id="345" parent="307" name="stu_app___fk">
+    <foreign-key id="358" parent="308" name="stu_app___fk">
       <ColNames>stu_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>tb_stu</RefTableName>
     </foreign-key>
-    <foreign-key id="346" parent="307" name="course_app___fk">
+    <foreign-key id="359" parent="308" name="course_app___fk">
       <ColNames>course_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>tb_course</RefTableName>
     </foreign-key>
-    <index id="347" parent="307" name="PRIMARY">
+    <index id="360" parent="308" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="348" parent="307" name="stu_app___fk">
+    <index id="361" parent="308" name="stu_app___fk">
       <ColNames>stu_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="349" parent="307" name="course_app___fk">
+    <index id="362" parent="308" name="course_app___fk">
       <ColNames>course_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="350" parent="307" name="PRIMARY">
+    <key id="363" parent="308" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="351" parent="308" name="id">
+    <column id="364" parent="309" name="id">
       <AutoIncrement>15</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="352" parent="308" name="name">
+    <column id="365" parent="309" name="name">
       <Comment>教师姓名</Comment>
       <DasType>varchar(10)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="353" parent="308" name="salary">
+    <column id="366" parent="309" name="salary">
       <Comment>教师工资</Comment>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="354" parent="308" name="age">
+    <column id="367" parent="309" name="age">
       <Comment>教师年龄</Comment>
       <DasType>int|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="355" parent="308" name="sex">
+    <column id="368" parent="309" name="sex">
       <Comment>教师性别1-男 2-女</Comment>
       <DasType>int|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <Position>5</Position>
     </column>
-    <index id="356" parent="308" name="PRIMARY">
+    <index id="369" parent="309" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="357" parent="308" name="PRIMARY">
+    <key id="370" parent="309" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="358" parent="309" name="id">
+    <column id="371" parent="310" name="id">
       <AutoIncrement>43</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="359" parent="309" name="name">
+    <column id="372" parent="310" name="name">
       <Comment>申请项目名</Comment>
       <DasType>varchar(20)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="360" parent="309" name="company_id">
+    <column id="373" parent="310" name="company_id">
       <Comment>申请公司id</Comment>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="361" parent="309" name="start_date">
+    <column id="374" parent="310" name="start_date">
       <Comment>开始日期</Comment>
       <DasType>date|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="362" parent="309" name="end_date">
+    <column id="375" parent="310" name="end_date">
       <Comment>结束日期</Comment>
       <DasType>date|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <foreign-key id="363" parent="309" name="train_company_fk">
+    <foreign-key id="376" parent="310" name="train_company_fk">
       <ColNames>company_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>tb_company</RefTableName>
     </foreign-key>
-    <index id="364" parent="309" name="PRIMARY">
+    <index id="377" parent="310" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="365" parent="309" name="train_company_fk">
+    <index id="378" parent="310" name="train_company_fk">
       <ColNames>company_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="366" parent="309" name="PRIMARY">
+    <key id="379" parent="310" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

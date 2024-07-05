@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haoqi.hqedu.mapper.StuCourseMapper">
+
+    <select id="showstu" resultType="com.haoqi.hqedu.pojo.StuApp">
+        select
+            s.name as stu_name,
+            c.name as course_name
+            from tb_stuapp sa
+            join tb_stu s on sa.stu_id = s.id
+            join tb_course c on sa.course_id = c.id
+        where course_id = #{id} AND flag = 1
+    </select>
+</mapper>

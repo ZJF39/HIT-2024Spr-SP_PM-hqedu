@@ -28,7 +28,6 @@ public class StuAppController {
                              String name){
         PageBean pageBean = stuAppService.show(page,pageSize,name);
         return Result.success(pageBean);
-
     }
 
     @DeleteMapping("/delete/{ids}")
@@ -53,5 +52,6 @@ public class StuAppController {
         stuAppService.update(stuApp);
         return Result.success();
     }
+
 
 }
