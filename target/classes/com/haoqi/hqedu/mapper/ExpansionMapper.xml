@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haoqi.hqedu.mapper.ExpansionMapper">
+    <!--查询学员申请-->
+    <select id="select" resultType="com.haoqi.hqedu.pojo.Stu">
+        SELECT
+            s.id,
+            s.username,
+            s.password,
+            s.name,
+            s.tel_num
+        FROM
+            tb_stuapp sa
+        JOIN
+            tb_stu s ON sa.stu_id = s.id
+        WHERE
+            sa.course_id = #{ids}
+    </select>
+</mapper>
