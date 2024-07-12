@@ -17,4 +17,6 @@ public interface StuService {
     void update(Stu stu);
 
     PageBean page(Integer page, Integer pageSize,String name);
+
+    Stu login(Stu stu);
 }

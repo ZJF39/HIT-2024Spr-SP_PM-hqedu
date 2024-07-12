@@ -1,14 +1,21 @@
 spring:
   application:
   name: haoqiedu
+
 spring.datasource:
   driver-class-name: com.mysql.cj.jdbc.Driver
   url: jdbc:mysql://localhost:3306/haoqiedu
   username: root
   password: oku200309
+
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
 
   mapper-locations=classpath: com\hqoqi\hqedu\mapper\StuMapper.xml
+
+aliyun:
+  oss:
+    endpoint: https://cn-beijing.oss.aliyuncs.com
+    bucketName: web-hqedu

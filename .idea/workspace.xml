@@ -21,6 +21,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="C:\Users\73937\.m2\wrapper\dists\apache-maven-3.9.7-bin\3k9n615lchs6mp84v355m633uo\apache-maven-3.9.7\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -29,43 +36,127 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.HqeduApplication.executor&quot;: &quot;Run&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Demo.executor": "Run",
+    "JUnit.Demo.test.executor": "Run",
+    "JUnit.HqeduApplicationTests.testJWT.executor": "Run",
+    "JUnit.HqeduApplicationTests.testParseJWT.executor": "Run",
+    "Maven. [idea:module].executor": "Run",
+    "Maven.aliyun-oss-spring-boot-autoconfigure [idea:module].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.HqeduApplication.executor": "Run",
+    "jdk.selected.JAVA_MODULE": "17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Code/Java/SPPM/aliyun-oss-spring-boot-autoconfigure/src/main/java/com/aliyun/oss",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.4643678",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Code\Java\SPPM\aliyun-oss-spring-boot-autoconfigure\src\main\java\com\aliyun\oss" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Code\Java\SPPM\hqedu\src\test\temp" />
+      <recent name="C:\Code\Java\SPPM\aliyun-oss-spring-boot-autoconfigure\src\main\resources\META-INF\spring" />
       <recent name="C:\Code\Java\SPPM\hqedu\src\main\resources\com\haoqi\hqedu\mapper" />
       <recent name="C:\Code\Java\SPPM\hqedu\src\main\java\com\haoqi\hqedu\uilt" />
       <recent name="C:\Code\Java\SPPM\hqedu\src\main\java\com\haoqi\hqedu\service\impl" />
-      <recent name="C:\Code\Java\SPPM\hqedu\src\main\java\com\haoqi\hqedu\service" />
-      <recent name="C:\Code\Java\SPPM\hqedu\src\main\java\com\haoqi\hqedu\mapper" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn idea:module" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.HqeduApplication">
+    <configuration name="Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.haoqi.hqedu.Demo" />
+      <module name="hqedu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.haoqi.hqedu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Demo.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hqedu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.haoqi.hqedu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.haoqi.hqedu" />
+      <option name="MAIN_CLASS_NAME" value="com.haoqi.hqedu.Demo" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HqeduApplicationTests.testJWT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hqedu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.haoqi.hqedu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.haoqi.hqedu" />
+      <option name="MAIN_CLASS_NAME" value="com.haoqi.hqedu.HqeduApplicationTests" />
+      <option name="METHOD_NAME" value="testJWT" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HqeduApplicationTests.testParseJWT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hqedu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.haoqi.hqedu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.haoqi.hqedu" />
+      <option name="MAIN_CLASS_NAME" value="com.haoqi.hqedu.HqeduApplicationTests" />
+      <option name="METHOD_NAME" value="testParseJWT" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AliyunOssSpringBootAutoconfigureApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="aliyun-oss-spring-boot-autoconfigure" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.aliyun.oss.AliyunOssSpringBootAutoconfigureApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HqeduApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="hqedu" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.haoqi.hqedu.HqeduApplication" />
@@ -73,6 +164,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.HqeduApplicationTests.testParseJWT" />
+        <item itemvalue="JUnit.HqeduApplicationTests.testJWT" />
+        <item itemvalue="JUnit.Demo.test" />
+        <item itemvalue="Application.Demo" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -100,12 +199,32 @@
       <workItem from="1720498542299" duration="961000" />
       <workItem from="1720499533090" duration="1025000" />
       <workItem from="1720512524595" duration="96000" />
-      <workItem from="1720520756228" duration="582000" />
+      <workItem from="1720520756228" duration="1718000" />
+      <workItem from="1720659945290" duration="9000" />
+      <workItem from="1720665664668" duration="622000" />
+      <workItem from="1720666306121" duration="1099000" />
+      <workItem from="1720668331262" duration="473000" />
+      <workItem from="1720669580328" duration="1379000" />
+      <workItem from="1720672558123" duration="1223000" />
+      <workItem from="1720676254427" duration="11044000" />
+      <workItem from="1720762912973" duration="7133000" />
+      <workItem from="1720790488373" duration="122000" />
+      <workItem from="1720790646810" duration="2037000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -3,12 +3,15 @@ package com.haoqi.hqedu.controller;
 import com.haoqi.hqedu.pojo.PageBean;
 import com.haoqi.hqedu.pojo.Result;
 import com.haoqi.hqedu.service.StuService;
+import com.haoqi.hqedu.util.JwtUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.haoqi.hqedu.pojo.Stu;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @RestController
@@ -80,5 +83,26 @@ public class StuController {
         log.info("分页查询学员信息:{},{},{}", page, pageSize, name);
         PageBean pageBean = stuService.page(page, pageSize, name);
         return Result.success(pageBean);
+    }
+
+
+    /**
+     * 登录
+     */
+    @PostMapping("/login")
+    public Result login(@RequestBody Stu stu) {
+        Stu s = stuService.login(stu);
+
+        if(s!=null){
+
+            Map<String, Object> claims = new HashMap<>();
+            claims.put("id",s.getId());
+            claims.put("name",s.getName());
+            claims.put("username",s.getUsername());
+            String jwt = JwtUtils.generateJwt(claims);// 生成包含员工信息的jwt令牌
+            return Result.success(jwt);
+        }
+
+        return Result.error("用户名或密码错误");
     }
 }

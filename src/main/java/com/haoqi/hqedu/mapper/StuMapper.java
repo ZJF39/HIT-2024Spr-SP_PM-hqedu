@@ -65,4 +65,6 @@ public interface StuMapper {
     public List<Stu> page(String name);
 
 
+    @Select("select * from tb_stu where username = #{username} and password = #{password}")
+    Stu login(Stu stu);
 }

@@ -63,4 +63,10 @@ public class StuServiceimpl implements StuService {
         PageBean pageBean = new PageBean(P.getTotal(), P.getResult());
         return pageBean;
     }
+
+    @Override
+    public Stu login(Stu stu) {
+        stu = stuMapper.login(stu);
+        return stu;
+    }
 }
